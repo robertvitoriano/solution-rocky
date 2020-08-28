@@ -55,3 +55,73 @@ convertPricesToNumber(products)
 informZeroquantity(products)
 //4 writing fixed data and generating a JSON FILE
 writeFixedDataInJsonFile(products)
+
+
+
+//*************************************************************** */ Validation ************************************************************
+
+
+//sorting in alphabetic order and by Id
+
+ // 1 Sort By category and Id
+
+function sortByCategoryAndId(products){
+    products.sort(function (a, b) {
+
+        return (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0);
+
+    });
+    products.sort(function (a, b) {
+
+        return (a.category > b.category) ? 1 : ((b.category > a.category) ? -1 : 0);
+
+    });
+
+    console.log(products);
+    
+}
+
+
+ // 2 sum up value in stock by category
+
+function sumTotalValueByCategory(products) {
+    console.log("Valor total Por categoria:\n ")
+    let totalValueEletronics=0;
+    let totalValueAccessories = 0;
+    let totalValuePans= 0;
+    let totalValueHomeAppliances = 0;
+
+    products.forEach(product => {
+        if (product.category === 'Acessórios'){
+             
+            totalValueAccessories +=  (product.price*product.quantity);
+        }
+        if (product.category === 'Eletrodomésticos') {
+
+            totalValueHomeAppliances += (product.price * product.quantity);
+        }
+        if (product.category === 'Eletrônicos') {
+
+            totalValueEletronics +=  (product.price * product.quantity);
+        }
+        if (product.category === 'Panelas') {
+
+            totalValuePans += (product.price * product.quantity);
+        }
+        
+    });
+
+    console.log("Valor em Estoque de Eletrônicos: "+totalValueEletronics);
+    console.log("Valor em Estoque de Panelas: "+ totalValuePans);
+    console.log("Valor em Estoque de Eletrodomésticos: " + totalValueHomeAppliances);
+    console.log("Valor em Estoque de Acessórios: " + totalValueAccessories)
+
+}
+
+
+ // 1 Sort By category and Id
+
+sortByCategoryAndId(products);
+
+//2 sum up value in stock by category
+sumTotalValueByCategory(products);
