@@ -66,15 +66,21 @@ writeFixedDataInJsonFile(products)
  // 1 Sort By category and Id
 
 function sortByCategoryAndId(products){
-    products.sort(function (a, b) {
-
-        return (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0);
-
+    
+    products.sort((procuctA, productB) => {
+        return procuctA.id - productB.id;
     });
-    products.sort(function (a, b) {
 
-        return (a.category > b.category) ? 1 : ((b.category > a.category) ? -1 : 0);
 
+    products.sort((productA, productB) => {
+
+        if (productA.category < productB.category) {
+            return -1;
+        }
+        if (productA.category > productB.category) {
+            return 1;
+        }
+        return 0;
     });
 
     console.log(products);
