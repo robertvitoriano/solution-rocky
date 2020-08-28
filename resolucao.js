@@ -39,6 +39,19 @@ function informZeroquantity (products){
     });
 }
 
-informZeroquantity(products);
 
-console.log(products);
+function writeFixedDataInJsonFile(products){
+    const fixedProducts = JSON.stringify(products);
+    fs.writeFileSync('./fixed-database.json', fixedProducts);
+
+}
+
+
+// 1 fixing names
+fixNames(products);
+// 2 converting prices to number
+convertPricesToNumber(products)
+// 3 informing 0 quantity
+informZeroquantity(products)
+//4 writing fixed data and generating a JSON FILE
+writeFixedDataInJsonFile(products)
