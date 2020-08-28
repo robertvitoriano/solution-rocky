@@ -92,20 +92,20 @@ function sumTotalValueByCategory(products) {
     let totalValueHomeAppliances = 0;
 
     products.forEach(product => {
-        if (product.category === 'Acessórios'){
+        if (product.category === "Acessórios"){
              
             totalValueAccessories +=  (product.price*product.quantity);
         }
-        if (product.category === 'Eletrodomésticos') {
+        if (product.category === "Eletrodomésticos") {
 
             totalValueHomeAppliances += (product.price * product.quantity);
         }
-        if (product.category === 'Eletrônicos') {
-
+        if (product.category === "Eletrônicos") {
+      
             totalValueEletronics +=  (product.price * product.quantity);
         }
-        if (product.category === 'Panelas') {
-
+        if (product.category === "Panelas") {
+            
             totalValuePans += (product.price * product.quantity);
         }
         
