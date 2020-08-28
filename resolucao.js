@@ -41,7 +41,7 @@ function informZeroquantity(products) {
 
 function writeFixedDataInJsonFile(products) {
   const fixedProducts = JSON.stringify(products);
-  fs.writeFileSync("./fixed-database.json", fixedProducts);
+  fs.writeFileSync("./saida.json", fixedProducts);
 }
 
 // 1 fixing names
