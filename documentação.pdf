@@ -65,3 +65,4 @@ Objetivo: order na por categoria e Id os objetos do array de produtos.
 
 função: sortByCategoryAndId()
 
+Para que o array fosse ordenado, utilizou-se a função sort() passando como parametro para essa uma função de comparação.
