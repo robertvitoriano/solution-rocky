@@ -1,5 +1,5 @@
 Teste Rocky
-Esse teste foi resolvido em Javascript utilizando-se do módulo "fs", presente de maneira nativa no Nodejse.Essa linguagem foi escolhida
+Esse teste foi resolvido em Javascript. Essa linguagem foi escolhida
 devido ao meu constante uso da mesma para desenvolver projetos pessoais em NodeJs e React para criação de portifólio.
 
 
@@ -7,7 +7,12 @@ Para a resolução deste teste foram implementadas 7 funções. 5 para tratament
 
 1ª Parte -  Tratamento de dados.
 
-1) Nomes
+1) Leitura do arquivo
+Objetivo: Ler o arquivo fornecido broken-database.
+
+função: readFile()
+
+2) Nomes
 Objetivo: substituir os caracteres "a" por "æ", "c" por "¢", "o" por "ø", "b" por "ß" nos nomes dos produtos.
 
 funcão: fixNames()
@@ -18,7 +23,7 @@ Isso permitiu que todas as ocorrências do caracter fossem encrontradas e substi
 Assim todos os nomes tiveram os caracteres incorretos substituidos por caracteres corretos.
 
 
-2) Preços
+3) Preços
 
 Objetivo: substituir os caracteres "a" por "æ", "c" por "¢", "o" por "ø", "b" por "ß" nos nomes dos produtos.
 
@@ -29,18 +34,7 @@ Para que fosse garantido que todos os valores do campo preço em cada produto fo
 foi usada a função map (que altera o array original) e uma reatribuição do campo preço  com o mesmo sendo passdo como parâmetro na função parseFloat().
 Essa função converte um valor String para Float, se isso se mostrar possível.
 
-3) Quantidades
-
-Objetivo: Informar quantidade 0 no produto que não possuir o campo quantidade.
-
-funcão: informZeroquantity()
-
-Para a inserção do campo quantidade e atribuição de 0 ao mesmo, caso esse campo não existisse, foi utilizada a função map, para Assim
-alterar o Array que com ela fosse iterado. Após a iteração, foi verificada a existência do campo 'quantidade' com a estrutura condicional
-if em cada um dos produtos caso esse campo não existisse, era atribuito ao produto esse campo e igualando o mesmo a zero. Com isso o campo 
-foi criado quando necessário.
-
-3) Quantidades
+4) Quantidades
 
 Objetivo: Informar quantidade 0 no produto que não possuir o campo quantidade.
 
@@ -52,4 +46,22 @@ if em cada um dos produtos caso esse campo não existisse, era atribuito ao prod
 foi criado quando necessário.
 
 
+
+5) Criação de arquivo 'saida.json' com dados tradados
+Objetivo: escrever um novo arquivo .json .
+
+função: writeFixedDataInJsonFile()
+
+Para que fosse gerado um arquivo json, foi utilizada a função nativa do módulor fs writeFileSync(). Essa função entretando, recebe uma informação
+em JSON, então para isso, foi passado por parâmetro o objeto com os dados trados para a função JSON.stringfy(). E ent~~ao, foi especidicado no
+primeiro parametro da função writeFileSync() o caminho no qual o arquivo deveria ser criado, e no segundo foram inseridos os dados anteriormente
+convertidos para json.
+
+
+2ª Parte 
+
+1) escrever no console objetos do array de produtos ordenados.
+Objetivo: order na por categoria e Id os objetos do array de produtos.
+
+função: sortByCategoryAndId()
 
