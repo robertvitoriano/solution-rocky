@@ -1,10 +1,17 @@
 const fs = require("fs");
 
-const data = fs.readFileSync("./broken-database.json");
 
-const products = JSON.parse(data);
+// 1 Reading File
 
-// 1 Fixing names
+function readFile(path){
+
+  const data = fs.readFileSync(path);
+  const products = JSON.parse(data);
+
+  return products;
+}
+
+// 2 Fixing names
 function fixNames(products) {
   products.map((product) => {
     product.name = product.name.replace(/æ/g, "a");
@@ -14,10 +21,9 @@ function fixNames(products) {
   });
 }
 
-fixNames(products);
 //************************************************************************************************************************************ */
 
-// 2 converting price to number
+// 3 converting price to number
 
 function convertPricesToNumber(products) {
   products.map((product) => {
@@ -25,11 +31,11 @@ function convertPricesToNumber(products) {
   });
 }
 
-convertPricesToNumber(products);
+
 
 //************************************************************************************************************************************ */
 
-// 3 inform 0 quantity
+// 4 inform 0 quantity
 
 function informZeroquantity(products) {
   products.map((product) => {
@@ -39,19 +45,31 @@ function informZeroquantity(products) {
   });
 }
 
+// 5 write a new Json file
+
 function writeFixedDataInJsonFile(products) {
   const fixedProducts = JSON.stringify(products);
   fs.writeFileSync("./saida.json", fixedProducts);
 }
 
-// 1 fixing names
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------
+
+const filePath = "./broken-database.json"
+
+// 1 reading file
+const products = readFile(filePath);
+// 2 fixing names
 fixNames(products);
-// 2 converting prices to number
+// 3 converting prices to number
 convertPricesToNumber(products);
-// 3 informing 0 quantity
+// 4 informing 0 quantity
 informZeroquantity(products);
-//4 writing fixed data and generating a JSON FILE
+// 5 writing fixed data and generating a JSON FILE
 writeFixedDataInJsonFile(products);
+
+
 
 //*************************************************************** */ Validation ************************************************************
 
@@ -106,6 +124,7 @@ function sumTotalValueByCategory(products) {
   console.log("Valor em Estoque de Eletrodomésticos: " + totalValueHomeAppliances);
   console.log("Valor em Estoque de Acessórios: " + totalValueAccessories);
 }
+
 
 // 1 Sort By category and Id
 

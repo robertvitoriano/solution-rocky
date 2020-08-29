@@ -3,7 +3,7 @@ Esse teste foi resolvido em Javascript utilizando-se do módulo "fs", presente d
 devido ao meu constante uso da mesma para desenvolver projetos pessoais em NodeJs e React para criação de portifólio.
 
 
-Para a resolução deste teste foram implementadas 6 funções. 4 para tratamento dos dados e 2 para validação dos dados.
+Para a resolução deste teste foram implementadas 7 funções. 5 para tratamento dos dados e 2 para validação dos dados.
 
 1ª Parte -  Tratamento de dados.
 
@@ -27,6 +27,29 @@ funcão: convertPricesToNumber()
 
 Para que fosse garantido que todos os valores do campo preço em cada produto fossem convertidos para um número decimal,
 foi usada a função map (que altera o array original) e uma reatribuição do campo preço  com o mesmo sendo passdo como parâmetro na função parseFloat().
-Essa função converte um valor string para Float, se isso se mostrar possível.
+Essa função converte um valor String para Float, se isso se mostrar possível.
+
+3) Quantidades
+
+Objetivo: Informar quantidade 0 no produto que não possuir o campo quantidade.
+
+funcão: informZeroquantity()
+
+Para a inserção do campo quantidade e atribuição de 0 ao mesmo, caso esse campo não existisse, foi utilizada a função map, para Assim
+alterar o Array que com ela fosse iterado. Após a iteração, foi verificada a existência do campo 'quantidade' com a estrutura condicional
+if em cada um dos produtos caso esse campo não existisse, era atribuito ao produto esse campo e igualando o mesmo a zero. Com isso o campo 
+foi criado quando necessário.
+
+3) Quantidades
+
+Objetivo: Informar quantidade 0 no produto que não possuir o campo quantidade.
+
+funcão: informZeroquantity()
+
+Para a inserção do campo quantidade e atribuição de 0 ao mesmo, caso esse campo não existisse, foi utilizada a função map, para Assim
+alterar o Array que com ela fosse iterado. Após a iteração, foi verificada a existência do campo 'quantidade' com a estrutura condicional
+if em cada um dos produtos caso esse campo não existisse, era atribuito ao produto esse campo e igualando o mesmo a zero. Com isso o campo 
+foi criado quando necessário.
+
 
 
