@@ -1,4 +1,5 @@
 Teste Rocky
+
 Esse teste foi resolvido em Javascript. Essa linguagem foi escolhida
 devido ao meu constante uso da mesma para desenvolver projetos pessoais em NodeJs e React para criação de portifólio.
 
@@ -61,8 +62,28 @@ convertidos para json.
 2ª Parte 
 
 1) escrever no console objetos do array de produtos ordenados.
+
 Objetivo: order na por categoria e Id os objetos do array de produtos.
 
 função: sortByCategoryAndId()
 
 Para que o array fosse ordenado, utilizou-se a função sort() passando como parametro para essa uma função de comparação.
+
+A função de comparação recebe dois argumentos, que serão dois dos elementos dos que serão ordenados. Para a ordenação 
+em ordem crescente de Id teve de ser retornada a subtração dos mesmos nessa primeira ordenação. Para a ordenação em ordem alfabética das
+categorias, foram verificados os códigos unicode de cada categoria de produto com a estrutura condicional if. Foi comparado se o produtoA 
+era maior que o produtoB ou se era menor que este. Caso fosse maior (portanto a frente no alfabeto em relação a B), isso significaria que  
+que deveria vir num  indice posterior a o produtoB para isso retornou-se 1. Caso fosse menor(portanto anterior no alfabeto em relação a B), 
+isso significaria que  que deveria  vir num indice anterior a o produtoB para isso retornou-se -1. Caso fossem iguais, a ordenação ocorre
+pelo Id, já realizada anteriormente.
+
+2) soma do valor em estoque de cada categoria
+
+função: sumTotalValueByCategory()
+
+
+Objetivo: Somar  valor total em estoque de todos os produtos de cada categoria, com base no preço e na quantidade.
+
+Para a resolução,  foram criadas 4 variaveis que seriam iteradas para cada produto e verificações com a estrutura condicional if para 
+soma acumulativa caso o produto pertencesse  à categoria determinada na condição. Ao final as somas foram escritas no console com 4 funções
+console.log().
