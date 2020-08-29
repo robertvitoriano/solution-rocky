@@ -103,9 +103,7 @@ function sumTotalValueByCategory(products) {
 
   console.log("Valor em Estoque de Eletrônicos: " + totalValueEletronics);
   console.log("Valor em Estoque de Panelas: " + totalValuePans);
-  console.log(
-    "Valor em Estoque de Eletrodomésticos: " + totalValueHomeAppliances
-  );
+  console.log("Valor em Estoque de Eletrodomésticos: " + totalValueHomeAppliances);
   console.log("Valor em Estoque de Acessórios: " + totalValueAccessories);
 }
 
