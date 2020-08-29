@@ -1,0 +1,32 @@
+Teste Rocky
+Esse teste foi resolvido em Javascript utilizando-se do módulo "fs", presente de maneira nativa no Nodejse.Essa linguagem foi escolhida
+devido ao meu constante uso da mesma para desenvolver projetos pessoais em NodeJs e React para criação de portifólio.
+
+
+Para a resolução deste teste foram implementadas 6 funções. 4 para tratamento dos dados e 2 para validação dos dados.
+
+1ª Parte -  Tratamento de dados.
+
+1) Nomes
+Objetivo: substituir os caracteres "a" por "æ", "c" por "¢", "o" por "ø", "b" por "ß" nos nomes dos produtos.
+
+funcão: fixNames()
+
+Para isso, foi utilizada a função map(). Dentro da função callback que map recebe, 
+foi feita uma atribuição do nome do produto com a função replace, utilizando a expressão RegEx "/caracter/g".
+Isso permitiu que todas as ocorrências do caracter fossem encrontradas e substituidas pelo segundo argumento da função replace.
+Assim todos os nomes tiveram os caracteres incorretos substituidos por caracteres corretos.
+
+
+2) Preços
+
+Objetivo: substituir os caracteres "a" por "æ", "c" por "¢", "o" por "ø", "b" por "ß" nos nomes dos produtos.
+
+funcão: convertPricesToNumber()
+
+
+Para que fosse garantido que todos os valores do campo preço em cada produto fossem convertidos para um número decimal,
+foi usada a função map (que altera o array original) e uma reatribuição do campo preço  com o mesmo sendo passdo como parâmetro na função parseFloat().
+Essa função converte um valor string para Float, se isso se mostrar possível.
+
+
